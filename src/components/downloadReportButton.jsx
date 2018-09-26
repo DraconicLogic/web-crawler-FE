@@ -5,7 +5,7 @@ const DownloadReportButton = (props) => {
   const { reportId } = props;
   return (
     <div>
-      <button onlClick={() => requestReport(reportId)}>Download</button>
+      <button onClick={() => requestReport(reportId)}>Download</button>
     </div>
   );
 };
