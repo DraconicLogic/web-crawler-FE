@@ -1,11 +1,11 @@
 import React from 'react';
 import * as api from '../api';
 
-const downloadReportButton = (props) => {
+const DownloadReportButton = (props) => {
   const { reportId } = props;
   return (
     <div>
-      <buton onlClick={() => requestReport(reportId)}></buton>
+      <button onlClick={() => requestReport(reportId)}>Download</button>
     </div>
   );
 };
@@ -15,7 +15,8 @@ const requestReport = (reportId) => {
     .then(res => res.json())
     .then(report => {
       //download report functionality here!
+      console.log(report)
     })
 }
 
-export default downloadReportButton;
+export default DownloadReportButton;
