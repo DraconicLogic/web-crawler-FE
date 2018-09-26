@@ -8,8 +8,6 @@ class App extends Component {
   state = {
     report: {
       rootUrl: 'www.bbc.co.uk',
-      totalLink: 3,
-      totalBrokenLinks: 2,
       brokenLinks: ['www.123.com', 'www.456.com'],
       workingLinks: ['www.abc.com']
     }
