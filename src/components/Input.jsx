@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-// import * as API from './API';
+import * as api from './api';
+i
 
 class Input extends Component {
     state = {
         inputText: '',
-        validAddress: false
+        validAddress: false,
+        submitted: false
     }
     render() {
-        return (
+        if (this.state.submitted) return <Redirect to={{ pathname: '/report' }} />
+        else return (
             <div>
                 <form onSubmit={(this.submitChange)}>
                     <label>
@@ -31,7 +34,14 @@ class Input extends Component {
 
     submitChange = (e) => {
         e.preventDefault();
-        this.state.validAddress ? console.log('async API.getReport(e)') : console.log("can't search for that address");
+        if (this.state.validAddress) {
+            api.getReport(e.target.value);
+            this.setState({
+                inputText: '',
+                validAddress: false,
+                submitted: true
+            })
+        }
     }
 }
 
