@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import { Redirect } from 'react-router-dom';
+import data from '../data/data.json';
 
 class Input extends Component {
   state = {
@@ -50,6 +51,7 @@ class Input extends Component {
     this.setState({
       submitted: true
     });
+    this.props.handleReport(data);
   }
 }
 

@@ -1,0 +1,14 @@
+[
+  {
+    "url": "www.abc.com",
+    "status": "successful"
+  },
+  {
+    "url": "www.dfdf.com",
+    "status": "successful"
+  },
+  {
+    "url": "www.dfvvre.com",
+    "status": "unsuccessful"
+  }
+]

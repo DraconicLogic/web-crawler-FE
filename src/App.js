@@ -23,9 +23,17 @@ class App extends Component {
   }
 
   handleReport = (response) => {
-    console.log("report handled!")
+    const workingLinks = []
+    const brokenLinks = []
+    response.forEach(link => {
+      link.status === 'successful' ? workingLinks.push(link.url) : brokenLinks.push(link.url)
+    })
     this.setState({
-      response
+      report: {
+        brokenLinks, workingLinks
+      }
+    }, () => {
+      console.log(this.state)
     })
   }
 }
