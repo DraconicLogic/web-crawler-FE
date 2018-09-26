@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import * as API from './API';
+import * as api from '../api';
 
 class Input extends Component {
     state = {
@@ -31,10 +31,14 @@ class Input extends Component {
 
     submitChange = (e) => {
         e.preventDefault();
-        this.state.validAddress ? console.log('async API.getReport(e)') : console.log("can't search for that address");
+        if (this.state.validAddress) {
+            api.getReport(e)
+                .then(data => {
+                    this.props.func(data)
+                })
+        }
     }
 }
-
 
 
 export default Input;
